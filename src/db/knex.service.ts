@@ -1,7 +1,12 @@
 import { Model } from "objection";
 import { Injectable, OnModuleInit, OnModuleDestroy } from "@nestjs/common";
 import * as knex from "knex";
+<<<<<<< HEAD
 const knexConfig = {
+=======
+
+const knexConfig =  {
+>>>>>>> e8aecaa1de091597e501f0e27c8b2ecd71486b33
   client: "pg",
   connection: {
     user: "avnadmin",
@@ -39,7 +44,11 @@ dUn7sXBsG11VmHc0SXooPYUEzXZd6k0mG4QXEDs/UEHYNNOdAA==
     },
   },
 };
+<<<<<<< HEAD
 export default knexConfig;
+=======
+export default knexConfig
+>>>>>>> e8aecaa1de091597e501f0e27c8b2ecd71486b33
 
 @Injectable()
 export class KnexService implements OnModuleInit, OnModuleDestroy {

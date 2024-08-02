@@ -4,7 +4,7 @@ import { UserModule } from "./user/user.module";
 import * as cors from "cors";
 async function bootstrap() {
   const app = await NestFactory.create(UserModule);
- 
+
   app.use(
     cors({
       origin: "https://funny-peony-17f202.netlify.app",  
