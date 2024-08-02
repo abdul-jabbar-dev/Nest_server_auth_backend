@@ -1,7 +1,5 @@
-import { Model } from "objection";
-import { Injectable, OnModuleInit, OnModuleDestroy } from "@nestjs/common";
-import * as knex from "knex";
-const knexConfig = {
+/* eslint-disable prettier/prettier */
+ const knexConfig =  {
   client: "pg",
   connection: {
     user: "avnadmin",
@@ -39,22 +37,4 @@ dUn7sXBsG11VmHc0SXooPYUEzXZd6k0mG4QXEDs/UEHYNNOdAA==
     },
   },
 };
-export default knexConfig;
-
-@Injectable()
-export class KnexService implements OnModuleInit, OnModuleDestroy {
-  private knexInstance;
-
-  onModuleInit() {
-    this.knexInstance = knex(knexConfig);
-    Model.knex(this.knexInstance);
-  }
-
-  onModuleDestroy() {
-    this.knexInstance.destroy();
-  }
-
-  getKnex() {
-    return this.knexInstance;
-  }
-}
+export default knexConfig

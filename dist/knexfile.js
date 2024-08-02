@@ -1,17 +1,16 @@
-import { Model } from "objection";
-import { Injectable, OnModuleInit, OnModuleDestroy } from "@nestjs/common";
-import * as knex from "knex";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const knexConfig = {
-  client: "pg",
-  connection: {
-    user: "avnadmin",
-    password: "AVNS_C9MeAh_Z0vvQz92qa-T",
-    host: "pg-whatsapp-abdul-jabbar.a.aivencloud.com",
-    port: 11224,
-    database: "defaultdb",
-    ssl: {
-      rejectUnauthorized: true,
-      ca: `-----BEGIN CERTIFICATE-----
+    client: "pg",
+    connection: {
+        user: "avnadmin",
+        password: "AVNS_C9MeAh_Z0vvQz92qa-T",
+        host: "pg-whatsapp-abdul-jabbar.a.aivencloud.com",
+        port: 11224,
+        database: "defaultdb",
+        ssl: {
+            rejectUnauthorized: true,
+            ca: `-----BEGIN CERTIFICATE-----
 MIIEQTCCAqmgAwIBAgIUHbILs3upZyQ6bnKlJ6m/JRNciUkwDQYJKoZIhvcNAQEM
 BQAwOjE4MDYGA1UEAwwvOGIxY2RhY2ItNTNhMC00MDE0LTliMjgtYmFlYTViYTRl
 MjQzIFByb2plY3QgQ0EwHhcNMjQwMTI4MTAxMjAxWhcNMzQwMTI1MTAxMjAxWjA6
@@ -36,25 +35,8 @@ ag6TIjyxSdLoO5/zrMKPpgxTr9bHHkMIxt2Kho9ETLYXbOdDFDIdVwfiPImjFfE8
 lFxEFcdGDzybRfJfjPgBunJvhwQCfK4DJ6MhNc07ovnIAaWosbr2yYjzB8TggsI1
 dUn7sXBsG11VmHc0SXooPYUEzXZd6k0mG4QXEDs/UEHYNNOdAA==
 -----END CERTIFICATE-----`,
+        },
     },
-  },
 };
-export default knexConfig;
-
-@Injectable()
-export class KnexService implements OnModuleInit, OnModuleDestroy {
-  private knexInstance;
-
-  onModuleInit() {
-    this.knexInstance = knex(knexConfig);
-    Model.knex(this.knexInstance);
-  }
-
-  onModuleDestroy() {
-    this.knexInstance.destroy();
-  }
-
-  getKnex() {
-    return this.knexInstance;
-  }
-}
+exports.default = knexConfig;
+//# sourceMappingURL=knexfile.js.map
