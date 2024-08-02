@@ -7,12 +7,12 @@ async function bootstrap() {
 
   app.use(
     cors({
-      origin: "https://funny-peony-17f202.netlify.app",  
+      origin: "*",  
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
       allowedHeaders: "Content-Type, Accept",
     })
   );
 
-  await app.listen(3000);
+  await app.listen(process.env.PORT||3000);
 }
 bootstrap();
